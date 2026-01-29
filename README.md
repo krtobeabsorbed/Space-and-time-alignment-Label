@@ -11,7 +11,7 @@ Early-stage temporal-spatial alignment code and annotation software tutorials
    cd Space-and-time-alignment-Label
    ```
 2. 安装依赖库：
-   **推荐 Python 版本**: 3.8.x
+   **推荐 Python 版本**: 3.8.x  or  3.9.x
    ```
    pip install -r requirements.txt
    ```
