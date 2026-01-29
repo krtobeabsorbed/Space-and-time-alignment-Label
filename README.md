@@ -1,9 +1,8 @@
 # Space-and-time-alignment-Label
 Early-stage temporal-spatial alignment code and annotation software tutorials
-
-26Alignment-code文档
-## 1.时间空间对齐代码
-
+# 
+# 1.时间空间对齐代码
+## 26Alignment-code文件夹下
 ### 🛠️ 环境安装 (Installation)
 1. 克隆本项目：
    ```
@@ -48,7 +47,38 @@ Early-stage temporal-spatial alignment code and annotation software tutorials
    - `dataset_fusion_final.csv`: 包含对齐后的多模态数据（喂给大模型）。
    - `output_fusion.mp4`: 带有雷达投影的可视化验证视频。
 ## 
-### 2.ELAN标注工具教程
 
+# 2.ELAN 标注工具教程
+## 
+**我们标注这个作用为在视频标注动作方便让后续大模型训练理解，标注一段时间帧范围内人物动作 ** 
 
-<img width="789" height="346" alt="image" src="https://github.com/user-attachments/assets/4f2771d9-fa72-4e7e-bf41-11ac193be523" />
+## 软件安装
+
+| 软件             | 下载地址                                |
+| ---------------- | --------------------------------------- |
+| ELAN             | [官网](https://archive.mpi.nl/tla/elan) |
+| VLC Media Player | [官网](https://www.videolan.org/vlc/)   |
+
+---
+
+## 视频教程
+
+**新手入门（20分钟，可倍速）**  
+🔗 [B站链接](https://www.bilibili.com/video/BV1Tv411t71y/)
+
+---
+
+## 图文教程
+
+- [ELAN 详细图文教程](https://blog.csdn.net/qq_39213580/article/details/107782988)  
+  包含：文件导出、受控词表设置
+
+- **受控词表详解视频**（图文看不懂时参考）  
+  🔗 [B站链接](https://www.bilibili.com/video/BV1FT4y1U7zS/)
+
+---
+
+## 学习顺序
+
+安装软件 → 看入门视频 → 读图文教程→尝试标注
+
