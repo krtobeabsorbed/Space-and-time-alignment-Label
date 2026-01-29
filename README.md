@@ -2,9 +2,9 @@
 Early-stage temporal-spatial alignment code and annotation software tutorials
 
 26Alignment-code文档
-### 1.时间空间对齐代码
+## 1.时间空间对齐代码
 
-🛠️ 环境安装 (Installation)
+### 🛠️ 环境安装 (Installation)
 1. 克隆本项目：
    ```
    git clone [https://github.com/krtobeabsorbed/Space-and-time-alignment-Label.git]
@@ -15,7 +15,7 @@ Early-stage temporal-spatial alignment code and annotation software tutorials
    ```
    pip install -r requirements.txt
    ```
-## 🚀 使用教程 (Usage Pipeline)
+### 🚀 使用教程 (Usage Pipeline)
 
 ### Step 1: 原始数据清洗
 
