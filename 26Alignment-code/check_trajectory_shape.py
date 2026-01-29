@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # 填入你想检查的一对文件
 # ============================
 RADAR_FILE = 'radar_track1.txt'   # 或者是 p2
-CAM_FILE = 'camera_track4.txt'    # 对应的相机
+CAM_FILE = 'camera_track1.txt'    # 对应的相机
 FPS_RATIO = 30.0 / 16.13  # Video_FPS / Radar_FPS
 
 def check_shape():

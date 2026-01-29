@@ -4,10 +4,9 @@ from sklearn.cluster import DBSCAN
 
 # ==========================================
 # 1. 雷达配置 (和之前一样)
-#  FFT处理点云，同时生成俯视图对照，以及track.txt痕迹文件
 # ==========================================
 CONFIG = {
-    'file_path': 'adc_data_Full_p2_aligned.bin',
+    'file_path': 'adc_data_Full_p1_aligned.bin', 
     'num_adc_samples': 256,
     'num_chirps_per_frame': 384,
     'num_rx_antennas': 4,
@@ -89,18 +88,15 @@ def generate_point_cloud(config):
             points_xyz.append([x, y, z])
         
         points_xyz = np.array(points_xyz)
-
-        # ==================================================================
-        # 【原有逻辑】 DBSCAN 聚类 (逻辑保持不变，但输入变成了过滤后的点)
-        # ==================================================================
+        
         # 聚类找人 (DBSCAN)
         if len(points_xyz) > 0:
             clustering = DBSCAN(eps=0.5, min_samples=3).fit(points_xyz)
             # 假设点最多的那个类是人
             labels = clustering.labels_
-            if len(set(labels)) > 1 or (len(set(labels)) == 1 and -1 not in labels):
+            if len(set(labels)) > 1 or (len(set(labels))==1 and -1 not in labels):
                 # 找最大的簇
-                unique_labels, counts = np.unique(labels[labels >= 0], return_counts=True)
+                unique_labels, counts = np.unique(labels[labels>=0], return_counts=True)
                 if len(unique_labels) > 0:
                     dominant_label = unique_labels[np.argmax(counts)]
                     person_points = points_xyz[labels == dominant_label]
@@ -116,11 +112,10 @@ def generate_point_cloud(config):
         if frame_idx % 50 == 0:
             print(f"处理进度: {frame_idx}/{num_frames}")
 
-
     # 保存结果
     radar_centroids = np.array(radar_centroids)
-    np.savetxt("radar_track2.txt", radar_centroids, fmt="%.4f")
-    print("雷达轨迹已保存到 radar_track2.txt")
+    np.savetxt("radar_track.txt", radar_centroids, fmt="%.4f")
+    print("雷达轨迹已保存到 radar_track.txt")
     
     # 画个图看看轨迹对不对
     plt.figure()

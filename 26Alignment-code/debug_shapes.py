@@ -6,8 +6,8 @@ import os
 # 调试配置：填入你刚才报错的那一组文件
 # ==========================================
 # 比如看看 P2 和 C3 (虽然误差很大，但至少算出来了，适合分析)
-RADAR_FILE = 'radar_track1_new.txt'
-CAM_FILE = 'camera_track4.txt'
+RADAR_FILE = 'radar_track2.txt' 
+CAM_FILE = 'camera_track3.txt'
 
 # 视频和雷达的帧率
 VIDEO_FPS = 30.0

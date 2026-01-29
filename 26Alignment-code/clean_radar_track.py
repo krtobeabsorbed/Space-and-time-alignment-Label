@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # ============================
-# 配置 去除墙壁反射的静止点
+# 配置
 # ============================
 INPUT_FILE = 'radar_track2.txt'   # 清洗的文件
 OUTPUT_FILE = 'radar_track2_clean.txt' # 清洗后的文件
@@ -86,11 +86,9 @@ def clean_data():
     plt.title("Cleaned (Person Only)")
     cl_arr = np.array(cleaned_data)
     plt.scatter(cl_arr[:,0], cl_arr[:,1], s=5, c='g', alpha=0.8)
-    # plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
-    # plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
-    plt.xlim(np.nanmin(data[:, 0]), np.nanmax(data[:, 0]))
-    plt.ylim(np.nanmin(data[:, 1]), np.nanmax(data[:, 1]))
-
+    plt.xlim(np.min(data[:,0]), np.max(data[:,0]))
+    plt.ylim(np.min(data[:,1]), np.max(data[:,1]))
+    
     plt.show()
 
 if __name__ == "__main__":

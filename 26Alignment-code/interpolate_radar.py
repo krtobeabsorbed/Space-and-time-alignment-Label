@@ -1,12 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
-import matplotlib.pyplot as plt
 
-# ==========================================
-# 1. 雷达配置 (和之前一样)
-#  FFT处理点云，同时生成俯视图对照，以及track.txt痕迹文件
-# ==========================================
 INPUT_FILE = 'radar_track2_clean.txt'
 OUTPUT_FILE = 'radar_track2_final_smooth.txt'
 
@@ -45,35 +40,6 @@ def fill_gaps():
     print(f"已生成平滑后的轨迹文件: {OUTPUT_FILE}")
     print("请在 interactive_tuner 和 generate_fusion 中使用这个新文件。")
     print("-" * 30)
-    # ==========================================
-    # 4. 可视化对比 (新增部分)
-    # ==========================================
-    plt.figure(figsize=(14, 6))
-
-    # 左图：修复前 (断断续续)
-    plt.subplot(1, 2, 1)
-    plt.plot(df['x'], df['y'], 'r.', markersize=2, label='Original Points')  # 用点画，能看出断裂
-    # 为了连线看清楚顺序，也可以画淡淡的线
-    plt.plot(df['x'], df['y'], 'r-', alpha=0.2)
-    plt.title(f"Before: Broken Trajectory ({len(df)} pts)")
-    plt.xlabel("X (Left/Right)")
-    plt.ylabel("Y (Depth)")
-    plt.grid(True)
-    plt.axis('equal')  # 保持比例
-
-    # 右图：修复后 (丝滑连接)
-    plt.subplot(1, 2, 2)
-    plt.plot(df_smooth['x'], df_smooth['y'], 'b-', linewidth=2, label='Smoothed')  # 用线画，看连贯性
-    plt.plot(df_smooth['x'], df_smooth['y'], 'b.', markersize=4)  # 显示补出来的点
-    plt.title(f"After: Interpolated & Smoothed")
-    plt.xlabel("X (Left/Right)")
-    plt.ylabel("Y (Depth)")
-    plt.grid(True)
-    plt.axis('equal')
-
-    plt.suptitle(f"Effect of Interpolation: {INPUT_FILE}")
-    plt.tight_layout()
-    plt.show()
 
 if __name__ == "__main__":
     fill_gaps()

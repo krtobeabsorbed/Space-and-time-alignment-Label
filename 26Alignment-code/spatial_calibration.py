@@ -9,12 +9,11 @@ PAIRS = [
     ('radar_track1.txt', 'camera_track1.txt', 'calib_r1_c1.npz'),
     ('radar_track1.txt', 'camera_track2.txt', 'calib_r1_c2.npz'), # 之前失败的那个
     ('radar_track1.txt', 'camera_track3.txt', 'calib_r1_c3.npz'),
-    ('radar_track1_new.txt', 'camera_track4.txt', 'calib_r1_c4.npz'),
+    ('radar_track1.txt', 'camera_track4.txt', 'calib_r1_c4.npz'),
 ]
 
 # 海康相机参数
-# W, H = 3200, 1800
-W, H = 7680, 4320
+W, H = 3200, 1800
 F_mm = 4.0 
 Sensor_W_mm = 5.9
 fx = F_mm * W / Sensor_W_mm
