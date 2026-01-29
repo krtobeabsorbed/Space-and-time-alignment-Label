@@ -49,8 +49,7 @@ Early-stage temporal-spatial alignment code and annotation software tutorials
 ## 
 
 # 2.ELAN 标注工具教程
-## 
-**我们标注这个作用为在视频标注动作方便让后续大模型训练理解，标注一段时间帧范围内人物动作 ** 
+我们标注这个作用为在视频标注动作方便让后续大模型训练理解，标注一段时间帧范围内人物动作
 
 ## 软件安装
 
