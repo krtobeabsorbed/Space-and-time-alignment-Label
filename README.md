@@ -15,7 +15,7 @@ Early-stage temporal-spatial alignment code and annotation software tutorials
    ```
    pip install -r requirements.txt
    ```
-   ## 🚀 使用教程 (Usage Pipeline)
+## 🚀 使用教程 (Usage Pipeline)
 
 ### Step 1: 原始数据清洗
 
